@@ -1,41 +1,41 @@
 # Dupely
 
-Dupely is a premium macOS application designed to keep your focus during high-stakes meetings. It provides a sleek, transparent **HUD (Heads-Up Display)** for your notes, allowing you to reference talking points without breaking eye contact or losing sight of your screen content.
+Dupely is an application for focus during meetings. It provides a HUD (Heads-Up Display) for notes. This allows reference to points without breaking contact or losing sight of content.
 
-## ✨ Features
+## Features
 
-### 🖥️ Main Dashboard
-*   **Central Control**: A professional macOS dashboard to manage your user profile and application settings.
-*   **Profile Management**: Personalized member sidebar and dashboard welcome experience.
-*   **Smart HUD Toggle**: A single, large controller to activate or hide your heads-up notes.
+### Dashboard
+*   **Control**: A dashboard to manage profile and settings.
+*   **Profile**: Sidebar and dashboard experience.
+*   **HUD Toggle**: Controller to activate or hide notes.
 
-### 🌬️ Transparent HUD (Heads-Up Display)
-*   **Persistent Visibility**: Built with native `NSPanel` architecture, the HUD follows you across all macOS Spaces and stays visible even over full-screen browser windows.
-*   **Glassmorphism Design**: Beautiful, native macOS blur effect using `.ultraThinMaterial` that adapts to your background.
-*   **Meeting-Optimized Controls**:
-    *   **Auto-Hide UI**: Controls for opacity and font size only appear when you hover, keeping the interface clean for your meeting.
-    *   **Non-Blocking**: Designed to be placed anywhere on screen so it doesn't block the interviewer's face.
-    *   **Full Keyboard Support**: Seamlessly type notes while the overlay is in focus.
+### HUD (Heads-Up Display)
+*   **Visibility**: Built with NSPanel architecture, the HUD moves across Spaces and stays in view over windows.
+*   **Design**: Effect using .ultraThinMaterial that adapts to background.
+*   **Controls**:
+    *   **UI**: Controls for opacity and size appear when you hover for meeting.
+    *   **Placement**: Designed to be placed on screen so it doesn't block interviewer face.
+    *   **Keyboard**: Type notes while HUD has focus.
 
-## 🚀 Getting Started
+## Getting Started
 
-1.  **Open Project**: Launch `Dupely.xcodeproj` in Xcode.
-2.  **Build and Run**: Press **⌘R**.
-3.  **Launch the HUD**: Use the **Toggle HUD** button in the main dashboard to bring your notes onto the screen.
-4.  **Note Persistence**: Your notes are automatically saved and will be right where you left them when you return.
+1.  **Open**: Launch Dupely.xcodeproj in Xcode.
+2.  **Build**: Press ⌘R.
+3.  **Launch**: Use the toggle in the dashboard to bring notes onto screen.
+4.  **Persistence**: Notes are saved and will be there when you return.
 
-## 🛠 Architecture
+## Architecture
 
-*   **Language**: Swift 6.0
+*   **Language**: Swift
 *   **Framework**: SwiftUI
-*   **Native Integration**: Custom `NSPanel` subclass for the HUD to handle advanced window levels (`.mainMenu`) and cross-context persistence.
+*   **Integration**: NSPanel subclass for HUD to handle window levels and context persistence.
 
-## 🔮 Roadmap: Notion & AI Integration
+## Roadmap: Notion & AI
 
-We are expanding Dupely into an intelligent meeting assistant:
-*   **Notion Sync**: Direct integration to pull your meeting agendas and project briefs into the HUD.
-*   **AI Context**: Real-time LLM support to summarize notes or provide talking points based on your active Notion content.
-*   **Bi-directional Save**: Export your HUD notes back to Notion automatically after the meeting.
+We are expanding Dupely into a meeting assistant:
+*   **Notion**: Integration to pull agendas and briefs into HUD.
+*   **AI**: LLM support to summarize notes or provide points based on Notion content.
+*   **Save**: Export HUD notes back to Notion after meeting.
 
 ---
-Built with ☕️ on macOS.
+Built with on macOS.

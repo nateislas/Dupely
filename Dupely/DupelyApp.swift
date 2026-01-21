@@ -30,7 +30,7 @@ class DupelyPanel: NSPanel {
     }
     
     override var canBecomeMain: Bool {
-        return false // Panels usually shouldn't be 'Main' if they are auxiliary, prevents hiding
+        return false // Panels shouldn't be 'Main' if they are HUD, prevents hiding
     }
 }
 
@@ -40,7 +40,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ notification: Notification) {
         AppDelegate.shared = self
-        // Set to .regular so it appears in the Dock and has a main window
+        // Set to .regular so it appears in Dock and has window
         NSApp.setActivationPolicy(.regular)
     }
     
@@ -67,7 +67,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             
             panel.isOpaque = false
             panel.backgroundColor = .clear
-            // .mainMenu level is very safe for overlays usage
+            // .mainMenu level is for usage
             panel.level = .mainMenu
             panel.isMovableByWindowBackground = true
             panel.isReleasedWhenClosed = false
@@ -77,7 +77,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             // .stationary: Don't move when exposing/mission control
             panel.collectionBehavior = [.canJoinAllSpaces, .fullScreenAuxiliary, .stationary]
             
-            // CRITICAL: prevents the panel from hiding when you click Safari
+            // Prevents panel from hiding when you click Safari
             panel.hidesOnDeactivate = false
             panel.isFloatingPanel = true
             
@@ -89,15 +89,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             self.floatingNoteWindow = panel
         }
         
-        // orderFront instead of makeKeyAndOrderFront prevents stealing focus aggressively
-        // causing main app deactivation issues in some edge cases
+        // orderFront prevents focus issues
         floatingNoteWindow?.orderFront(nil)
     }
 }
 
 struct MainDashboardView: View {
     @State private var userName = "Nathaniel Islas"
-    @State private var userBio = "Building Dupely - The smart meeting overlay."
+    @State private var userBio = "Building Dupely - Meeting overlay."
     
     var body: some View {
         HStack(spacing: 0) {
@@ -112,7 +111,7 @@ struct MainDashboardView: View {
                     VStack(alignment: .leading) {
                         Text(userName)
                             .font(.headline)
-                        Text("Pro Member")
+                        Text("Member")
                             .font(.caption)
                             .foregroundColor(.secondary)
                     }
@@ -162,7 +161,7 @@ struct MainDashboardView: View {
                         VStack(alignment: .leading) {
                             Text("Toggle HUD")
                                 .font(.headline)
-                            Text("Heads-up notes for your meetings")
+                            Text("Notes for meetings")
                                 .font(.subheadline)
                                 .opacity(0.7)
                         }
